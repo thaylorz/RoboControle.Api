@@ -56,7 +56,7 @@ public sealed class AppHttpClient(HttpClient _httpClient)
         var changeHeadInclinationRequest = RobotRequestFactory.CreateChangeHeadInclinationRequest(inclination);
 
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-        return await _httpClient.PostAsJsonAsync($"robots/{robotId}/ChangeHeadInclination", changeHeadInclinationRequest);
+        return await _httpClient.PutAsJsonAsync($"robots/{robotId}/ChangeHeadInclination", changeHeadInclinationRequest);
     }
 
     public async Task<HttpResponseMessage> ChangeHeadRotation(string robotId, int rotation, string token)
@@ -64,7 +64,7 @@ public sealed class AppHttpClient(HttpClient _httpClient)
         var changeHeadRotationRequest = RobotRequestFactory.CreateChangeHeadRotationRequest(rotation);
 
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-        return await _httpClient.PostAsJsonAsync($"robots/{robotId}/ChangeHeadRotation", changeHeadRotationRequest);
+        return await _httpClient.PutAsJsonAsync($"robots/{robotId}/ChangeHeadRotation", changeHeadRotationRequest);
     }
 
     public async Task<HttpResponseMessage> ChangeElbowRotation(string robotId, int rotation, string token)
@@ -72,7 +72,7 @@ public sealed class AppHttpClient(HttpClient _httpClient)
         var changeElbowRotationRequest = RobotRequestFactory.CreateChangeElbowRotationRequest(rotation);
 
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-        return await _httpClient.PostAsJsonAsync($"robots/{robotId}/ChangeElbowRotation", changeElbowRotationRequest);
+        return await _httpClient.PutAsJsonAsync($"robots/{robotId}/ChangeElbowRotation", changeElbowRotationRequest);
     }
 
     public async Task<HttpResponseMessage> ChangeWristRotation(string robotId, int rotation, string token)
@@ -80,7 +80,7 @@ public sealed class AppHttpClient(HttpClient _httpClient)
         var changeWristRotationRequest = RobotRequestFactory.CreateChangeWristRotationRequest(rotation);
 
         _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-        return await _httpClient.PostAsJsonAsync($"robots/{robotId}/ChangeWristRotation", changeWristRotationRequest);
+        return await _httpClient.PutAsJsonAsync($"robots/{robotId}/ChangeWristRotation", changeWristRotationRequest);
     }
 
     #endregion

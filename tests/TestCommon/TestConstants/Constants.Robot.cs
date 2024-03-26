@@ -7,6 +7,6 @@ public static partial class Constants
         public static readonly Ulid Id = Ulid.NewUlid();
         public const int Inclination = 1;
         public const int Rotation = 1;
-        public const string Side = "Right";
+        public const int Side = 1;
     }
 }

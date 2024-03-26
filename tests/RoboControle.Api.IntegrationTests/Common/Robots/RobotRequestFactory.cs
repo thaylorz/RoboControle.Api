@@ -40,23 +40,23 @@ public sealed class RobotRequestFactory
         return new Faker<ChangeHeadRotationRequest>().CustomInstantiator(f => new ChangeHeadRotationRequest(f.Random.Int(min: 1, max: 5)));
     }
 
-    public static ChangeElbowRotationRequest CreateChangeElbowRotationRequest(int rotation = Constants.Robot.Rotation, string side = Constants.Robot.Side)
+    public static ChangeElbowRotationRequest CreateChangeElbowRotationRequest(int rotation = Constants.Robot.Rotation, int side = Constants.Robot.Side)
     {
         return new(rotation, side);
     }
 
     public static ChangeElbowRotationRequest CreateRandomChangeElbowRotationRequest()
     {
-        return new Faker<ChangeElbowRotationRequest>().CustomInstantiator(f => new ChangeElbowRotationRequest(f.Random.Int(min: 1, max: 4), f.PickRandom("left", "right")));
+        return new Faker<ChangeElbowRotationRequest>().CustomInstantiator(f => new ChangeElbowRotationRequest(f.Random.Int(min: 1, max: 4), f.Random.Int(1, 2)));
     }
 
-    public static ChangeWristRotationRequest CreateChangeWristRotationRequest(int rotation = Constants.Robot.Rotation, string side = Constants.Robot.Side)
+    public static ChangeWristRotationRequest CreateChangeWristRotationRequest(int rotation = Constants.Robot.Rotation, int side = Constants.Robot.Side)
     {
         return new(rotation, side);
     }
 
     public static ChangeWristRotationRequest CreateRandomChangeWristRotationRequest()
     {
-        return new Faker<ChangeWristRotationRequest>().CustomInstantiator(f => new ChangeWristRotationRequest(f.Random.Int(min: 1, max: 7), f.PickRandom("left", "right")));
+        return new Faker<ChangeWristRotationRequest>().CustomInstantiator(f => new ChangeWristRotationRequest(f.Random.Int(min: 1, max: 7), f.Random.Int(1, 2)));
     }
 }

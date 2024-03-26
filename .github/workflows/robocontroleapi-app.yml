@@ -8,7 +8,7 @@ env:
   CONTAINER_APP_NAME: robocontroleapi-app-202403260946
   CONTAINER_APP_RESOURCE_GROUP_NAME: estudos
   CONTAINER_REGISTRY_LOGIN_SERVER: robocontroleapi20240326095003.azurecr.io
-  DOCKER_FILE_PATH: src/RoboControle.Api/Dockerfile
+  DOCKER_FILE_PATH: Dockerfile
   PROJECT_NAME_FOR_DOCKER: robocontrole.api
 jobs:
   build:

@@ -32,11 +32,8 @@ var app = builder.Build();
 {
     app.UseExceptionHandler();
 
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
-        app.UseSwaggerUI();
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
     var defaultCultureInfo = new[] { new CultureInfo("pt-BR") };
     app.UseRequestLocalization(new RequestLocalizationOptions
